@@ -9,6 +9,6 @@ class C_Auth extends Controller
 {
     public function loginPage()
     {
-        echo "Halaman login";
+        return view('admin.auth.loginPage');
     }
 }
