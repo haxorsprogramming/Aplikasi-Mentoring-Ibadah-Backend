@@ -8,8 +8,10 @@
                         <div class="card-body">
                             <div style="text-align: center;">
                                 <img src="http://s3.jagoanstorage.com/aditia-storage/asset/logo/uinsu.png" style="width: 200px;" />
-                                <h3>Login</h3>
-                                <p class="text-muted">Administrator</p>
+                                <p class="text-muted" style="margin-bottom: -1px;">Sistem Monitoring Ibadah Harian</p>
+                                <h3>LDK Al-Izzah Uinsu</h3>
+                                <hr/>
+                                <h4>Login Administrator</h4>
                             </div>
 
                             <div class="input-group mb-3">
@@ -36,7 +38,7 @@
                             </div>
 
                             <div style="margin-top:20px;">
-                                SPK Topsis - Pemilihan Kost by <strong>Jepnidah Hasibuan</strong>
+                            Sistem Monitoring Ibadah Harian by <strong>Fitria SBA</strong>
                             </div>
                         </div>
                     </div>

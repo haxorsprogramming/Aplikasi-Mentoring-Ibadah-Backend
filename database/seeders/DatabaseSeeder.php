@@ -27,7 +27,8 @@ class DatabaseSeeder extends Seeder
         // create binaan 
         $this -> createUserAndProfile('binaan1', 'BINAAN', 'binaan1', 'Umi Mardiah', '081278229022', 'P');
         $this -> createUserAndProfile('binaan2', 'BINAAN', 'binaan2', 'Alfa Naninda', '08127823311', 'P');
-
+        // create kader 
+        $this -> createUserAndProfile('kader1', 'KADER', 'kader1', 'Fitri Ardianti', '083190741788', 'P');
     }
     
     function createUserAndProfile($username, $role, $password, $namaLengkap, $hp, $jk)
