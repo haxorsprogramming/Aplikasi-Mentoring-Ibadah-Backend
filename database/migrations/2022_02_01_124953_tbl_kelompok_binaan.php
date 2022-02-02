@@ -13,7 +13,15 @@ class TblKelompokBinaan extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('tbl_kelompok_binaan', function (Blueprint $table) {
+            $table -> id();
+            $table -> char('id_kelompok_binaan', 1);
+            $table -> char('nama_kelompok_binaan', 100);
+            $table -> date('id_mentor');
+            $table -> char('id_binaan', 50);
+            $table -> timestamps();
+            $table -> char('active', 1);
+        });
     }
 
     /**
@@ -23,6 +31,6 @@ class TblKelompokBinaan extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('tbl_kelompok_binaan');
     }
 }

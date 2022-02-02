@@ -13,7 +13,15 @@ class TblPeserta extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('tbl_peserta', function (Blueprint $table) {
+            $table -> id();
+            $table -> char('token_antrian', 50);
+            $table -> char('ordinal', 5);
+            $table -> char('id_binaan', 200);
+            $table -> char('id_jenis_amalan', 50);
+            $table -> timestamps();
+            $table -> char('active', 1);
+        });
     }
 
     /**
@@ -23,6 +31,6 @@ class TblPeserta extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('tbl_peserta');
     }
 }
