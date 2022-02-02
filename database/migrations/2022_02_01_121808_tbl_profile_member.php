@@ -15,7 +15,6 @@ class TblProfileMember extends Migration
     {
         Schema::create('tbl_profile_member', function (Blueprint $table) {
             $table -> id();
-            $table -> char('kd_member', 1);
             $table -> char('username', 100);
             $table -> char('nama_lengkap', 200);
             $table -> char('nomor_handphone', 50);
