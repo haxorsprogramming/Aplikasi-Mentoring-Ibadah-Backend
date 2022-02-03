@@ -19,6 +19,7 @@
     <link href="{{ asset('ladun/admin') }}/asset/vendors/pace-progress/css/pace.min.css" rel="stylesheet">
     <script src="{{ asset('ladun/admin') }}/asset/vendors/jquery/js/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <link href="//cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css" rel="stylesheet">
 </head>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
@@ -66,7 +67,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)">
+                        <a class="nav-link" href="javascript:void(0)" @click="menuAtc('admin/main-app/binaan/list')">
                             <i class="nav-icon icon-list"></i> Binaan
                         </a>
                     </li>

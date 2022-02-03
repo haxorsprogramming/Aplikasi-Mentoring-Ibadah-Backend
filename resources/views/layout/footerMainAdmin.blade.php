@@ -11,6 +11,8 @@
 <!-- Plugins and scripts required by this view-->
 <!-- <script src="../asset/vendors/chart.js/js/Chart.min.js"></script> -->
 <script src="{{ asset('ladun/admin') }}/asset/vendors/@coreui/coreui-plugin-chartjs-custom-tooltips/js/custom-tooltips.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="//cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
 <script>
     var server = "{{ url('/') }}/";
 </script>

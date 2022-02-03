@@ -19,3 +19,12 @@ function loadPage(path)
     let rPage = server + path;
     $("#divUtama").load(rPage);
 }
+
+function pesanUmumApp(icon, title, text)
+{
+  Swal.fire({
+    icon : icon,
+    title : title,
+    text : text
+  });
+}
