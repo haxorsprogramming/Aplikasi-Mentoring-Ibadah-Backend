@@ -43,4 +43,30 @@ class C_Mentor extends Controller
         $dataMentor = M_Profile_Member::where('username', $request -> username) -> first();
         return \Response::json($dataMentor);
     }
+    public function prosesEditMentor(Request $request)
+    {
+        // {'username':username, 'password':password, 'nama':nama, 'hp':hp, 'jk':jk, 'email':email}
+        M_Profile_Member::where('username', $request -> username) -> update([
+            'nama_lengkap' => $request -> nama,
+            'nomor_handphone' => $request -> hp,
+            'email' => $request -> email,
+            'jk' => $request -> jk
+        ]);
+        if($request -> password == ""){
+            
+        }else{
+            M_User::where('username', $request -> username) -> update([
+                'password' => password_hash($request -> password, PASSWORD_DEFAULT)
+            ]);
+        }
+        $dr = ['status' => 'sukses'];
+        return \Response::json($dr);
+    }
+    public function prosesHapusMentor(Request $request)
+    {
+        M_Profile_Member::where('username', $request -> username) -> delete();
+        M_User::where('username', $request -> username) -> delete();
+        $dr = ['status' => 'sukses'];
+        return \Response::json($dr);
+    }
 }

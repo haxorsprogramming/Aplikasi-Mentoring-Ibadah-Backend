@@ -1,11 +1,13 @@
 // route 
 var rProsesTambahMentor = server + "admin/main-app/mentor/tambah/proses";
 var rGetDataMentor = server + "admin/main-app/mentor/get-data";
+var rProsesEditMentor = server + "admin/main-app/mentor/edit/proses";
+var rProsesHapusMentor = server + "admin/main-app/binaan/hapus/proses";
 // vue object
 var appMentor = new Vue({
     el: "#divMentor",
     data: {
-
+        usernameEdit : ''
     },
     methods: {
         tambahMentorAtc: function () {
@@ -45,6 +47,7 @@ var appMentor = new Vue({
         },
         editAtc : function(username)
         {
+            appMentor.usernameEdit = username;
             document.querySelector("#txtUsernameEdit").value = username;
             axios.post(rGetDataMentor, {'username':username}).then(function(res){
                 let obj = res.data;
@@ -54,6 +57,26 @@ var appMentor = new Vue({
                 document.querySelector("#txtEmailEdit").value = obj.email;
             });
             $('#modalEditMentor').modal('show');
+        },
+        prosesEditMentorAtc : function()
+        {
+            username = appMentor.usernameEdit;
+            let nama = document.querySelector("#txtNamaMentorEdit").value;
+            let password = document.querySelector("#txtPasswordEdit").value;
+            let hp = document.querySelector("#txtHpEdit").value;
+            let jk = document.querySelector("#txtJkEdit").value;
+            let email = document.querySelector("#txtEmailEdit").value;
+            let ds = {'username':username, 'password':password, 'nama':nama, 'hp':hp, 'jk':jk, 'email':email}
+            // console.log(password);
+            axios.post(rProsesEditMentor, ds).then(function(res){
+                $('#modalEditMentor').modal('hide');
+                pesanUmumApp('success', 'Sukses', 'Sukses mengupdate data mentor ...');
+                loadPage('admin/main-app/mentor/list');
+            });
+        },
+        hapusAtc : function(username)
+        {
+            confirmQuest('info', 'Konfirmasi', 'Hapus mentor ...?', function (x) {deleteConfirm(username)});
         }
     },
 });
@@ -61,3 +84,11 @@ var appMentor = new Vue({
 var isiForm = document.getElementsByClassName("form-control");
 var statusForm = true;
 $("#tblDataMentor").dataTable();
+
+function deleteConfirm(username)
+{
+    axios.post(rProsesHapusMentor, {'username':username}).then(function(res){
+        pesanUmumApp('success', 'Sukses', 'Sukses menghapus mentor ...');
+        loadPage('admin/main-app/mentor/list');
+    });
+}

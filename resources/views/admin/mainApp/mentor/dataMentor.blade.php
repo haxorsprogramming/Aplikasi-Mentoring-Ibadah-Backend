@@ -23,7 +23,7 @@
                         <td>{{ $mentor -> profileData -> nomor_handphone }} / {{ $mentor -> profileData -> email }}</td>
                         <td>
                             <a href="javascript:void(0)" class="btn btn-primary" @click="editAtc('{{ $mentor -> username }}')">Edit</a>&nbsp;&nbsp;
-                            <a href="javascript:void(0)" class="btn btn-warning">Hapus</a>
+                            <a href="javascript:void(0)" class="btn btn-warning" @click="hapusAtc('{{ $mentor -> username }}')">Hapus</a>
                         </td>
                     </tr>
                     @endforeach

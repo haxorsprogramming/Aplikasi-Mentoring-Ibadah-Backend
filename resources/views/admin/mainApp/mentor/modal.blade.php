@@ -87,7 +87,7 @@
                     <input type="text" class="form-control" id="txtEmailEdit">
                 </div>
                 <div>
-                    <a href="javascript:void(0)" class="btn btn-primary">Proses Edit Mentor</a>
+                    <a href="javascript:void(0)" class="btn btn-primary" @click="prosesEditMentorAtc()">Proses Edit Mentor</a>
                 </div>
             </div>
             <div class="modal-footer bg-whitesmoke br">
