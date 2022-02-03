@@ -51,17 +51,17 @@
             </li>
         </ul>
     </header>
-    <div class="app-body">
+    <div class="app-body" id="divApp">
         <div class="sidebar">
             <nav class="sidebar-nav">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)">
+                        <a class="nav-link" href="javascript:void(0)" @click="menuAtc('admin/main-app/beranda')">
                             <i class="nav-icon icon-speedometer"></i> Dashboard
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)">
+                        <a class="nav-link" href="javascript:void(0)" @click="menuAtc('admin/main-app/mentor/list')">
                             <i class="nav-icon icon-list"></i> Mentor
                         </a>
                     </li>

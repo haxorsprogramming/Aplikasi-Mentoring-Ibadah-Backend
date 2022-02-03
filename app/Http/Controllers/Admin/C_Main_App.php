@@ -11,4 +11,8 @@ class C_Main_App extends Controller
     {
         return view('admin.mainApp.dashboard.dashboardPage');
     }
+    public function beranda()
+    {
+        return view('admin.mainApp.dashboard.berandaPage');
+    }
 }
