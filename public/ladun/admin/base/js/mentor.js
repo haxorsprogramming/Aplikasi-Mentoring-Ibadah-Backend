@@ -10,40 +10,33 @@ var appMentor = new Vue({
         usernameEdit : ''
     },
     methods: {
-        tambahMentorAtc: function () {
+        tambahMentorAtc: function () 
+        {
             $('#modalTambahMentor').modal('show');
         },
         prosesTambahMentor: function () {
-            var tForm = document.getElementById("modalTambahMentor").querySelectorAll(".form-control");
-            // var tForm = document.getElementsByClassName("form-control");
-            for (let i = 0; i < tForm.length; i++) {
-                let dForm = tForm[i].value;
-                if(dForm === ''){
-                    statusForm = false;
-                }else{
-                    statusForm = true;
-                }
-            }
-            if(statusForm === true){
-                let username = document.querySelector("#txtUsername").value;
-                let password = document.querySelector("#txtPassword").value;
-                let nama = document.querySelector("#txtNamaMentor").value;
-                let hp = document.querySelector("#txtHp").value;
-                let jk = document.querySelector("#txtJk").value;
-                let email = document.querySelector("#txtEmail").value;
-                let ds = {'username':username, 'password':password, 'nama':nama, 'hp':hp, 'jk':jk, 'email':email}
-                axios.post(rProsesTambahMentor, ds).then(function(res){
-                    $('#modalTambahMentor').modal('hide');
-                    pesanUmumApp('success', 'Sukses', 'Sukses menambahkan mentor ...');
-                    loadPage('admin/main-app/mentor/list');
-                });
-            }else{
+            let listForm = ['txtUsername', 'txtPassword', 'txtNamaMentor', 'txtHp', 'txtEmail'];
+            let check = checkForm(listForm);
+            if(check === false){
                 pesanUmumApp('warning', 'Fill field !!!', 'Harap isi semua field !!!');
+                return false;
             }
+            let username = document.querySelector("#txtUsername").value;
+            let password = document.querySelector("#txtPassword").value;
+            let nama = document.querySelector("#txtNamaMentor").value;
+            let hp = document.querySelector("#txtHp").value;
+            let jk = document.querySelector("#txtJk").value;
+            let email = document.querySelector("#txtEmail").value;
+            let ds = {'username':username, 'password':password, 'nama':nama, 'hp':hp, 'jk':jk, 'email':email}
+            axios.post(rProsesTambahMentor, ds).then(function(res){
+                $('#modalTambahMentor').modal('hide');
+                pesanUmumApp('success', 'Sukses', 'Sukses menambahkan mentor ...');
+                loadPage('admin/main-app/mentor/list', 'Mentor');
+            });
         },
         kembaliAtc : function()
         {
-            loadPage('admin/main-app/mentor/list');
+            loadPage('admin/main-app/mentor/list', 'Mentor');
         },
         editAtc : function(username)
         {
@@ -71,7 +64,7 @@ var appMentor = new Vue({
             axios.post(rProsesEditMentor, ds).then(function(res){
                 $('#modalEditMentor').modal('hide');
                 pesanUmumApp('success', 'Sukses', 'Sukses mengupdate data mentor ...');
-                loadPage('admin/main-app/mentor/list');
+                loadPage('admin/main-app/mentor/list', 'Mentor');
             });
         },
         hapusAtc : function(username)
@@ -81,7 +74,6 @@ var appMentor = new Vue({
     },
 });
 // inisialisasi 
-var isiForm = document.getElementsByClassName("form-control");
 var statusForm = true;
 $("#tblDataMentor").dataTable();
 
@@ -89,6 +81,6 @@ function deleteConfirm(username)
 {
     axios.post(rProsesHapusMentor, {'username':username}).then(function(res){
         pesanUmumApp('success', 'Sukses', 'Sukses menghapus mentor ...');
-        loadPage('admin/main-app/mentor/list');
+        loadPage('admin/main-app/mentor/list', 'Mentor');
     });
 }

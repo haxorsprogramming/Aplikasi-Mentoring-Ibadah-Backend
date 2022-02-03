@@ -33,6 +33,7 @@
         <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <h4>Aplikasi Monitoring Ibadah LDK AL-Izzah Uinsu</h4>
         <ul class="nav navbar-nav ml-auto">
 
             <li class="nav-item d-md-down-none nama_admin">
@@ -57,17 +58,17 @@
             <nav class="sidebar-nav">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" @click="menuAtc('admin/main-app/beranda')">
+                        <a class="nav-link" href="javascript:void(0)" @click="menuAtc('admin/main-app/beranda', 'Dashboard')">
                             <i class="nav-icon icon-speedometer"></i> Dashboard
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" @click="menuAtc('admin/main-app/mentor/list')">
+                        <a class="nav-link" href="javascript:void(0)" @click="menuAtc('admin/main-app/mentor/list', 'Mentor')">
                             <i class="nav-icon icon-list"></i> Mentor
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" @click="menuAtc('admin/main-app/binaan/list')">
+                        <a class="nav-link" href="javascript:void(0)" @click="menuAtc('admin/main-app/binaan/list', 'Binaan')">
                             <i class="nav-icon icon-list"></i> Binaan
                         </a>
                     </li>

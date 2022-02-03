@@ -2,21 +2,22 @@
 var app = new Vue({
     el : '#divApp',
     data : {
-
+        sectionPage : 'Dashboard'
     },
     methods : {
-        menuAtc : function(path)
+        menuAtc : function(path, section)
         {
-            loadPage(path);
+            loadPage(path, section);
         }
     }
 });
 
-loadPage('admin/main-app/beranda');
+loadPage('admin/main-app/beranda', 'Dashboard');
 
-function loadPage(path)
+function loadPage(path, section)
 {
     let rPage = server + path;
+    app.sectionPage = section;
     $("#divUtama").load(rPage);
 }
 
@@ -45,4 +46,16 @@ function confirmQuest(icon, title, text, x)
             x();
         }
     });
+}
+
+function checkForm(element)
+{
+    let statusCheck = true;
+    for(let x = 0; x < element.length; x++){
+        let formData = document.querySelector("#"+element[x]).value;
+        if(formData.length === 0){
+            statusCheck = false;
+        }
+    }
+    return statusCheck;
 }

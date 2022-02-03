@@ -17,3 +17,4 @@ Route::post('/admin/main-app/mentor/edit/proses', [App\Http\Controllers\Admin\C_
 Route::post('/admin/main-app/binaan/hapus/proses', [App\Http\Controllers\Admin\C_Mentor::class, 'prosesHapusMentor']);
 // Binaan 
 Route::get('/admin/main-app/binaan/list', [App\Http\Controllers\Admin\C_Binaan::class, 'binaanPage']);
+Route::post('/admin/main-app/binaan/tambah/proses', [App\Http\Controllers\Admin\C_Binaan::class, 'prosesTambahBinaan']);
