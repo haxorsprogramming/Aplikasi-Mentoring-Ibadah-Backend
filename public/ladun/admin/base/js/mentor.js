@@ -1,5 +1,6 @@
 // route 
 var rProsesTambahMentor = server + "admin/main-app/mentor/tambah/proses";
+var rGetDataMentor = server + "admin/main-app/mentor/get-data";
 // vue object
 var appMentor = new Vue({
     el: "#divMentor",
@@ -8,12 +9,11 @@ var appMentor = new Vue({
     },
     methods: {
         tambahMentorAtc: function () {
-            $("#divDataMentor").hide();
-            $("#divTambahMentor").show();
-            document.querySelector("#txtUsername").focus();
+            $('#modalTambahMentor').modal('show');
         },
         prosesTambahMentor: function () {
-            var tForm = document.getElementsByClassName("form-control");
+            var tForm = document.getElementById("modalTambahMentor").querySelectorAll(".form-control");
+            // var tForm = document.getElementsByClassName("form-control");
             for (let i = 0; i < tForm.length; i++) {
                 let dForm = tForm[i].value;
                 if(dForm === ''){
@@ -31,6 +31,7 @@ var appMentor = new Vue({
                 let email = document.querySelector("#txtEmail").value;
                 let ds = {'username':username, 'password':password, 'nama':nama, 'hp':hp, 'jk':jk, 'email':email}
                 axios.post(rProsesTambahMentor, ds).then(function(res){
+                    $('#modalTambahMentor').modal('hide');
                     pesanUmumApp('success', 'Sukses', 'Sukses menambahkan mentor ...');
                     loadPage('admin/main-app/mentor/list');
                 });
@@ -41,6 +42,18 @@ var appMentor = new Vue({
         kembaliAtc : function()
         {
             loadPage('admin/main-app/mentor/list');
+        },
+        editAtc : function(username)
+        {
+            document.querySelector("#txtUsernameEdit").value = username;
+            axios.post(rGetDataMentor, {'username':username}).then(function(res){
+                let obj = res.data;
+                document.querySelector("#txtNamaMentorEdit").value = obj.nama_lengkap;
+                document.querySelector("#txtHpEdit").value = obj.nomor_handphone;
+                document.querySelector("#txtJkEdit").value = obj.jk;
+                document.querySelector("#txtEmailEdit").value = obj.email;
+            });
+            $('#modalEditMentor').modal('show');
         }
     },
 });

@@ -22,7 +22,7 @@
                         <td>{{ $mentor -> profileData -> nama_lengkap }}</td>
                         <td>{{ $mentor -> profileData -> nomor_handphone }} / {{ $mentor -> profileData -> email }}</td>
                         <td>
-                            <a href="javascript:void(0)" class="btn btn-primary">Edit</a>&nbsp;&nbsp;
+                            <a href="javascript:void(0)" class="btn btn-primary" @click="editAtc('{{ $mentor -> username }}')">Edit</a>&nbsp;&nbsp;
                             <a href="javascript:void(0)" class="btn btn-warning">Hapus</a>
                         </td>
                     </tr>

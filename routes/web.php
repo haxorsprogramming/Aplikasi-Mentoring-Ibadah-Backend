@@ -12,6 +12,7 @@ Route::get('/admin/main-app/beranda', [App\Http\Controllers\Admin\C_Main_App::cl
 // mentor 
 Route::get('/admin/main-app/mentor/list', [App\Http\Controllers\Admin\C_Mentor::class, 'mentorPage']);
 Route::post('/admin/main-app/mentor/tambah/proses', [App\Http\Controllers\Admin\C_Mentor::class, 'prosesTambahMentor']);
+Route::post('/admin/main-app/mentor/get-data', [App\Http\Controllers\Admin\C_Mentor::class, 'getDataMentor']);
 
 // Binaan 
 Route::get('/admin/main-app/binaan/list', [App\Http\Controllers\Admin\C_Binaan::class, 'binaanPage']);

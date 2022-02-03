@@ -38,4 +38,9 @@ class C_Mentor extends Controller
         $dr = ['status' => 'sukses'];
         return \Response::json($dr);
     }
+    public function getDataMentor(Request $request)
+    {
+        $dataMentor = M_Profile_Member::where('username', $request -> username) -> first();
+        return \Response::json($dataMentor);
+    }
 }
