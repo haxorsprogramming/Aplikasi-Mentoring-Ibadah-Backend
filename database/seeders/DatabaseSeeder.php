@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 use App\Models\M_User;
 use App\Models\M_Profile_Member;
 use App\Models\M_Kelompok_Binaan;
+use App\Models\M_Jenis_Amalan;
 
 class DatabaseSeeder extends Seeder
 {
@@ -30,11 +31,26 @@ class DatabaseSeeder extends Seeder
         $this -> createUserAndProfile('binaan2', 'BINAAN', 'binaan2', 'Alfa Naninda', '08127823311', 'P');
         // create kader 
         $this -> createUserAndProfile('kader1', 'KADER', 'kader1', 'Fitri Ardianti', '083190741788', 'P');
-
         // create kelompok binaan 
         $this -> createKelompokBinaan("AL Haziq", "mentor1");
         $this -> createKelompokBinaan("AL Imran", "mentor2");
         $this -> createKelompokBinaan("AR Rahman", "mentor1");
+        // create jenis amalan 
+        $this -> createJenisAmalan("Sholat Subuh", "4");
+        $this -> createJenisAmalan("Sholat Dzuhur", "5");
+        $this -> createJenisAmalan("Sholat Ashar", "5");
+        $this -> createJenisAmalan("Sholat Magrib", "4");
+        $this -> createJenisAmalan("Sholat Isya", "5");
+    }
+
+    public function createJenisAmalan($nama, $durasi)
+    {
+        $ja = new M_Jenis_Amalan();
+        $ja -> kd_amalan = Str::uuid();
+        $ja -> nama_amalan = $nama;
+        $ja -> durasi = $durasi;
+        $ja -> active = "1";
+        $ja -> save();
     }
 
     function createKelompokBinaan($nama, $idMentor)

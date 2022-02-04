@@ -28,3 +28,9 @@ Route::get('/admin/main-app/kelompok-binaan/{idKelompok}/detail', [App\Http\Cont
 Route::post('/admin/main-app/kelompok-binaan/tambah-anggota/proses', [App\Http\Controllers\Admin\C_Kelompok_Binaan::class, 'prosesTambahAnggota']);
 Route::post('/admin/main-app/kelompok-binaan/hapus-anggota/proses', [App\Http\Controllers\Admin\C_Kelompok_Binaan::class, 'prosesHapusAnggota']);
 Route::post('/admin/main-app/kelompok-binaan/hapus/proses', [App\Http\Controllers\Admin\C_Kelompok_Binaan::class, 'prosesHapusKelompokBinaan']);
+// jenis amalan 
+Route::get('/admin/main-app/jenis-amalan/list', [App\Http\Controllers\Admin\C_Jenis_Amalan::class, 'jenisAmalanPage']);
+Route::post('/admin/main-app/jenis-amalan/tambah/proses', [App\Http\Controllers\Admin\C_Jenis_Amalan::class, 'prosesTambahAmalan']);
+Route::post('/admin/main-app/jenis-amalan/data/get', [App\Http\Controllers\Admin\C_Jenis_Amalan::class, 'getDataAmalan']);
+Route::post('/admin/main-app/jenis-amalan/update/proses', [App\Http\Controllers\Admin\C_Jenis_Amalan::class, 'prosesUpdateAmalan']);
+Route::post('/admin/main-app/jenis-amalan/hapus/proses', [App\Http\Controllers\Admin\C_Jenis_Amalan::class, 'prosesHapusAmalan']);

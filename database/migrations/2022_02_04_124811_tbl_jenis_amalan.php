@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class TblAmalan extends Migration
+class TblJenisAmalan extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class TblAmalan extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_amalan', function (Blueprint $table) {
+        Schema::create('tbl_jenis_amalan', function (Blueprint $table) {
             $table -> id();
-            $table -> char('kd_amalan', 1);
+            $table -> char('kd_amalan', 50);
             $table -> char('nama_amalan', 100);
-            $table -> text('keterangan');
+            $table -> text('keterangan') -> nullable();
             $table -> integer('durasi');
             $table -> timestamps();
             $table -> char('active', 1);
@@ -31,6 +31,6 @@ class TblAmalan extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_amalan');
+        Schema::dropIfExists('tbl_jenis_amalan');
     }
 }
