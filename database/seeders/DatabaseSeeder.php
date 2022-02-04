@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 
 use App\Models\M_User;
 use App\Models\M_Profile_Member;
+use App\Models\M_Kelompok_Binaan;
 
 class DatabaseSeeder extends Seeder
 {
@@ -29,6 +30,22 @@ class DatabaseSeeder extends Seeder
         $this -> createUserAndProfile('binaan2', 'BINAAN', 'binaan2', 'Alfa Naninda', '08127823311', 'P');
         // create kader 
         $this -> createUserAndProfile('kader1', 'KADER', 'kader1', 'Fitri Ardianti', '083190741788', 'P');
+
+        // create kelompok binaan 
+        $this -> createKelompokBinaan("AL Haziq", "mentor1");
+        $this -> createKelompokBinaan("AL Imran", "mentor2");
+        $this -> createKelompokBinaan("AR Rahman", "mentor1");
+    }
+
+    function createKelompokBinaan($nama, $idMentor)
+    {
+        $kb = new M_Kelompok_Binaan();
+        $kb -> id_kelompok_binaan = Str::uuid();
+        $kb -> nama_kelompok_binaan = $nama;
+        $kb -> deks = "-";
+        $kb -> id_mentor = $idMentor;
+        $kb -> active = "1"; 
+        $kb -> save();
     }
     
     function createUserAndProfile($username, $role, $password, $namaLengkap, $hp, $jk)

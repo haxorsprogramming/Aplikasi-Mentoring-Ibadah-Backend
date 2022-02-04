@@ -20,6 +20,11 @@ class M_User extends Model
     public function profileData()
     {
         return $this -> belongsTo(M_Profile_Member::class, 'username', 'username');
-    } 
+    }
+    
+    public function cekBinaanKelompok($idKelompok, $username)
+    {
+        return M_Kelompok_Binaan_anggota::where('id_kelompok_binaan', $idKelompok) -> where('id_binaan', $username) -> count();
+    }
 
 }

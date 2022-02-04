@@ -25,7 +25,7 @@ var appKelompok = new Vue({
         },
         detailAtc : function(idKelompok)
         {
-            console.log(idKelompok);
+            loadPage('admin/main-app/kelompok-binaan/'+idKelompok+'/detail', 'Detail Kelompok Binaan');
         }
     }
 });

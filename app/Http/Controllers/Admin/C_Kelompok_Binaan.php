@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 
 use App\Models\M_User;
 use App\Models\M_Kelompok_Binaan;
+use App\Models\M_Kelompok_Binaan_anggota;
 
 class C_Kelompok_Binaan extends Controller
 {
@@ -29,6 +30,28 @@ class C_Kelompok_Binaan extends Controller
         $kb -> active = "1";
         $kb -> save();
         $dr = ['status' => 'sukses'];
+        return \Response::json($dr);
+    }
+    public function detailKelompokBinaan(Request $request, $idKelompokBinaan)
+    {
+        $dataBinaan = M_User::where('role', 'BINAAN') -> get();
+        $detailKb = M_Kelompok_Binaan::where('id_kelompok_binaan', $idKelompokBinaan) -> first();
+        $dr = ['dataBinaan' => $dataBinaan, 'detailKb' => $detailKb];
+        return view('admin.mainApp.kelompokBinaan.detail.detailKelompokBinaan', $dr);
+    }
+    public function prosesTambahAnggota(Request $request)
+    {
+        // // {'idKelompok':idKelompokBinaan, 'username':username}
+        // cek data 
+        // $cData = M_Kelompok_Binaan_anggota::where('id_kelompok_binaan', $request -> idKelompok) -> where('id_binaan', $request -> username) -> count();
+
+        // $kba = new M_Kelompok_Binaan_anggota();
+        // $kba -> token_anggota = Str::uuid();
+        // $kba -> id_kelompok_binaan = $request -> idKelompok;
+        // $kba -> id_binaan = $request -> username;
+        // $kba -> active = "1";
+        // $kba -> save();
+        $dr = ['status' => 'success'];
         return \Response::json($dr);
     }
 }
