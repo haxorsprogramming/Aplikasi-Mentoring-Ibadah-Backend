@@ -10,6 +10,7 @@
                     <thead style="border-top: 1px solid #d0d0d0;">
                         <tr>
                             <th>No</th>
+                            <th>Username</th>
                             <th>Nama</th>
                             <th>Hp / Email</th>
                             <th>Aksi</th>
@@ -19,6 +20,7 @@
                     @foreach($dataMentor as $mentor)
                     <tr>
                         <td>{{ $loop -> iteration }}</td>
+                        <td>{{ $mentor -> username }}</td>
                         <td>{{ $mentor -> profileData -> nama_lengkap }}</td>
                         <td>{{ $mentor -> profileData -> nomor_handphone }} / {{ $mentor -> profileData -> email }}</td>
                         <td>

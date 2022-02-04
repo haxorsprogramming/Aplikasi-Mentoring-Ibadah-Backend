@@ -37,4 +37,26 @@ class C_Binaan extends Controller
         $dr = ['status' => 'sukses'];
         return \Response::json($dr);
     }
+    public function getDataBinaan(Request $request)
+    {
+        $dataBinaan = M_Profile_Member::where('username', $request -> username) -> first();
+        return \Response::json($dataBinaan);
+    }
+    public function prosesHapusBinaan(Request $request)
+    {
+        // {'username':appBinaan.usernameEdit, 'password':password, 'nama':nama, 'hp':hp, 'email':email}
+        M_Profile_Member::where('username', $request -> username) -> update([
+            'nama_lengkap' => $request -> nama,
+            'nomor_handphone' => $request -> hp,
+            'email' => $request -> email,
+            'jk' => $request -> jk
+        ]);
+        if($request -> password != ""){
+            M_User::where('username', $request -> username) -> update([
+                'password' => password_hash($request -> password, PASSWORD_DEFAULT)
+            ]);
+        }
+        $dr = ['status' => 'sukses'];
+        return \Response::json($dr);
+    }
 }

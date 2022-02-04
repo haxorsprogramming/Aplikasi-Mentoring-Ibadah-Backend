@@ -52,9 +52,7 @@ class C_Mentor extends Controller
             'email' => $request -> email,
             'jk' => $request -> jk
         ]);
-        if($request -> password == ""){
-            
-        }else{
+        if($request -> password != ""){
             M_User::where('username', $request -> username) -> update([
                 'password' => password_hash($request -> password, PASSWORD_DEFAULT)
             ]);

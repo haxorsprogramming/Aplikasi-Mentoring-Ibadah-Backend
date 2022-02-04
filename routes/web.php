@@ -14,7 +14,9 @@ Route::get('/admin/main-app/mentor/list', [App\Http\Controllers\Admin\C_Mentor::
 Route::post('/admin/main-app/mentor/tambah/proses', [App\Http\Controllers\Admin\C_Mentor::class, 'prosesTambahMentor']);
 Route::post('/admin/main-app/mentor/get-data', [App\Http\Controllers\Admin\C_Mentor::class, 'getDataMentor']);
 Route::post('/admin/main-app/mentor/edit/proses', [App\Http\Controllers\Admin\C_Mentor::class, 'prosesEditMentor']);
-Route::post('/admin/main-app/binaan/hapus/proses', [App\Http\Controllers\Admin\C_Mentor::class, 'prosesHapusMentor']);
+Route::post('/admin/main-app/mentor/hapus/proses', [App\Http\Controllers\Admin\C_Mentor::class, 'prosesHapusMentor']);
 // Binaan 
 Route::get('/admin/main-app/binaan/list', [App\Http\Controllers\Admin\C_Binaan::class, 'binaanPage']);
 Route::post('/admin/main-app/binaan/tambah/proses', [App\Http\Controllers\Admin\C_Binaan::class, 'prosesTambahBinaan']);
+Route::post('/admin/main-app/binaan/get-data', [App\Http\Controllers\Admin\C_Binaan::class, 'getDataBinaan']);
+Route::post('/admin/main-app/binaan/hapus/proses', [App\Http\Controllers\Admin\C_Binaan::class, 'prosesHapusBinaan']);

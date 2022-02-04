@@ -10,6 +10,7 @@
                     <thead style="border-top: 1px solid #d0d0d0;">
                         <tr>
                             <th>No</th>
+                            <th>Username</th>
                             <th>Nama</th>
                             <th>Hp / Email</th>
                             <th>Aksi</th>
@@ -19,6 +20,7 @@
                     @foreach($dataBinaan as $binaan)
                     <tr>
                         <td>{{ $loop -> iteration }}</td>
+                        <td>{{ $binaan -> username }}</td>
                         <td>{{ $binaan -> profileData -> nama_lengkap }}</td>
                         <td>{{ $binaan -> profileData -> nomor_handphone }} / {{ $binaan -> profileData -> email }}</td>
                         <td>

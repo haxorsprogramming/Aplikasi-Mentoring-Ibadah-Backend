@@ -2,7 +2,7 @@
 var rProsesTambahMentor = server + "admin/main-app/mentor/tambah/proses";
 var rGetDataMentor = server + "admin/main-app/mentor/get-data";
 var rProsesEditMentor = server + "admin/main-app/mentor/edit/proses";
-var rProsesHapusMentor = server + "admin/main-app/binaan/hapus/proses";
+var rProsesHapusMentor = server + "admin/main-app/mentor/hapus/proses";
 // vue object
 var appMentor = new Vue({
     el: "#divMentor",

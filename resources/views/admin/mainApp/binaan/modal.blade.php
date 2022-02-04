@@ -18,8 +18,8 @@
                     <input type="password" class="form-control" id="txtPassword">
                 </div>
                 <div class="form-group">
-                    <label for="company">Nama Mentor</label>
-                    <input type="text" class="form-control" id="txtNamaMentor">
+                    <label for="company">Nama Binaan</label>
+                    <input type="text" class="form-control" id="txtNamaBinaan">
                 </div>
                 <div class="form-group">
                     <label for="company">Nomor Handphone</label>
@@ -60,15 +60,15 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label for="company">Username</label>
-                    <input type="text" class="form-control" id="txtUsernameEdit">
+                    <input type="text" class="form-control" id="txtUsernameEdit" disabled>
                 </div>
                 <div class="form-group">
-                    <label for="company">Password</label>
+                    <label for="company">Password</label>&nbsp;&nbsp;<small>(Kosongkan apabila tidak ada pergantian password)</small>
                     <input type="password" class="form-control" id="txtPasswordEdit">
                 </div>
                 <div class="form-group">
-                    <label for="company">Nama Mentor</label>
-                    <input type="text" class="form-control" id="txtNamaMentorEdit">
+                    <label for="company">Nama Binaan</label>
+                    <input type="text" class="form-control" id="txtNamaBinaanEdit">
                 </div>
                 <div class="form-group">
                     <label for="company">Nomor Handphone</label>
