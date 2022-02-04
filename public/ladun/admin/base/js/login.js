@@ -18,6 +18,8 @@ function prosesLogin()
         }else if(obj.status === "WRONG_PASSWORD"){
             pesanUmumApp('warning', 'Wrong password', 'Username / Password salah !!!');
         }else{
+            let token = obj.token;
+            document.cookie = "ADMIN_TOKEN="+token;
             window.location.assign(rToDashboard);
         }
     });

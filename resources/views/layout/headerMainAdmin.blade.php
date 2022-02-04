@@ -37,7 +37,7 @@
         <ul class="nav navbar-nav ml-auto">
 
             <li class="nav-item d-md-down-none nama_admin">
-                Halo, Admin
+                Halo, {{ $userLogin }}
             </li>
             <li class="nav-item dropdown" style="margin-right: 25px">
                 <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
