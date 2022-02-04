@@ -42,7 +42,7 @@ class C_Binaan extends Controller
         $dataBinaan = M_Profile_Member::where('username', $request -> username) -> first();
         return \Response::json($dataBinaan);
     }
-    public function prosesHapusBinaan(Request $request)
+    public function prosesUpdateBinaan(Request $request)
     {
         // {'username':appBinaan.usernameEdit, 'password':password, 'nama':nama, 'hp':hp, 'email':email}
         M_Profile_Member::where('username', $request -> username) -> update([
@@ -56,6 +56,13 @@ class C_Binaan extends Controller
                 'password' => password_hash($request -> password, PASSWORD_DEFAULT)
             ]);
         }
+        $dr = ['status' => 'sukses'];
+        return \Response::json($dr);
+    }
+    public function prosesHapusBinaan(Request $request)
+    {
+        M_Profile_Member::where('username', $request -> username) -> delete();
+        M_User::where('username', $request -> username) -> delete();
         $dr = ['status' => 'sukses'];
         return \Response::json($dr);
     }

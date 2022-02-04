@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class TblKelompokBinaan extends Migration
+class TblKelompokBinaanAnggota extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class TblKelompokBinaan extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_kelompok_binaan', function (Blueprint $table) {
+        Schema::create('tbl_kelompok_binaan_anggota', function (Blueprint $table) {
             $table -> id();
-            $table -> char('id_kelompok_binaan', 50);
-            $table -> char('nama_kelompok_binaan', 100);
-            $table -> text('deks') -> nullable();
-            $table -> char('id_mentor', 50);
+            $table -> char('token_anggota', 50);
+            $table -> char('id_kelompok_binaan', 100);
+            $table -> char('id_binaan', 100);
             $table -> timestamps();
             $table -> char('active', 1);
         });
@@ -31,6 +30,6 @@ class TblKelompokBinaan extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_kelompok_binaan');
+        Schema::dropIfExists('tbl_kelompok_binaan_anggota');
     }
 }

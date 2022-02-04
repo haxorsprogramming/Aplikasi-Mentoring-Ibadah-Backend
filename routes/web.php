@@ -15,8 +15,12 @@ Route::post('/admin/main-app/mentor/tambah/proses', [App\Http\Controllers\Admin\
 Route::post('/admin/main-app/mentor/get-data', [App\Http\Controllers\Admin\C_Mentor::class, 'getDataMentor']);
 Route::post('/admin/main-app/mentor/edit/proses', [App\Http\Controllers\Admin\C_Mentor::class, 'prosesEditMentor']);
 Route::post('/admin/main-app/mentor/hapus/proses', [App\Http\Controllers\Admin\C_Mentor::class, 'prosesHapusMentor']);
-// Binaan 
+// binaan 
 Route::get('/admin/main-app/binaan/list', [App\Http\Controllers\Admin\C_Binaan::class, 'binaanPage']);
 Route::post('/admin/main-app/binaan/tambah/proses', [App\Http\Controllers\Admin\C_Binaan::class, 'prosesTambahBinaan']);
 Route::post('/admin/main-app/binaan/get-data', [App\Http\Controllers\Admin\C_Binaan::class, 'getDataBinaan']);
+Route::post('/admin/main-app/binaan/update/proses', [App\Http\Controllers\Admin\C_Binaan::class, 'prosesUpdateBinaan']);
 Route::post('/admin/main-app/binaan/hapus/proses', [App\Http\Controllers\Admin\C_Binaan::class, 'prosesHapusBinaan']);
+// kelompok binaan 
+Route::get('/admin/main-app/kelompok-binaan/list', [App\Http\Controllers\Admin\C_Kelompok_Binaan::class, 'kelompokBinaanPage']);
+Route::post('/admin/main-app/kelompok-binaan/tambah/proses', [App\Http\Controllers\Admin\C_Kelompok_Binaan::class, 'prosesTambahKelompokBinaan']);

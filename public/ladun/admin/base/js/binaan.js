@@ -1,7 +1,8 @@
 // route
 var rProsesTambahBinaan = server + "admin/main-app/binaan/tambah/proses";
 var rGetDataBinaan = server + "admin/main-app/binaan/get-data";
-var rProsesUpdateBinaan = server + "admin/main-app/binaan/hapus/proses";
+var rProsesUpdateBinaan = server + "admin/main-app/binaan/update/proses";
+var rProsesHapusBinaan = server + "admin/main-app/binaan/hapus/proses";
 // vue object
 var appBinaan = new Vue({
     el: "#divBinaan",
@@ -32,7 +33,7 @@ var appBinaan = new Vue({
         },
         hapusAtc: function (username) 
         {
-
+            confirmQuest('info', 'Konfirmasi', 'Hapus Binaan ...?', function (x) {deleteConfirm(username)});
         },
         prosesEditBinaan : function()
         {
@@ -77,6 +78,14 @@ function prosesTambahBinaan() {
     axios.post(rProsesTambahBinaan, ds).then(function (res) {
         $("#modalTambahBinaan").modal("hide");
         pesanUmumApp("success", "Sukses", "Sukses menambahkan binaan ...");
+        loadPage("admin/main-app/binaan/list", "Binaan");
+    });
+}
+
+function deleteConfirm(username)
+{
+    axios.post(rProsesHapusBinaan, {'username':username}).then(function(res){
+        pesanUmumApp("success", "Sukses", "Sukses menghapus binaan ...");
         loadPage("admin/main-app/binaan/list", "Binaan");
     });
 }

@@ -73,7 +73,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)">
+                        <a class="nav-link" href="javascript:void(0)" @click="menuAtc('admin/main-app/kelompok-binaan/list', 'Kelompok Binaan')">
                             <i class="nav-icon icon-list"></i> Kelompok Binaan
                         </a>
                     </li>
