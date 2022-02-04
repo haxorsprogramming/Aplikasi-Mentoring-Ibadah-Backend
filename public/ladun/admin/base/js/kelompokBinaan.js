@@ -1,5 +1,6 @@
 // route 
 var rProsesTambahKelompokBinaan = server + "admin/main-app/kelompok-binaan/tambah/proses";
+var rProsesHapusKelompokBinaan = server + "admin/main-app/kelompok-binaan/hapus/proses";
 // vue object 
 var appKelompok = new Vue({
     el : '#divKelompokBinaan',
@@ -26,8 +27,20 @@ var appKelompok = new Vue({
         detailAtc : function(idKelompok)
         {
             loadPage('admin/main-app/kelompok-binaan/'+idKelompok+'/detail', 'Detail Kelompok Binaan');
+        },
+        hapusAtc : function(idKelompok)
+        {
+            confirmQuest('info', 'Konfirmasi', 'Hapus kelompok binaan ...?', function (x) {deleteConfirm(idKelompok)});
         }
     }
 });
 // inisialisasi 
 $("#tblDataKelompokBinaan").dataTable();
+
+function deleteConfirm(idKelompok)
+{
+    axios.post(rProsesHapusKelompokBinaan, {'idKelompok':idKelompok}).then(function(res){
+        pesanUmumApp('success', 'Sukses', 'Sukses menghapus kelompok binaan ...');
+        loadPage('admin/main-app/kelompok-binaan/list', 'Kelompok Binaan');
+    });
+}

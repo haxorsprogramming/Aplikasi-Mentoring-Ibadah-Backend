@@ -15,6 +15,9 @@ class M_Kelompok_Binaan_anggota extends Model
         'active'
     ];
 
-    
+    public function profileData()
+    {
+        return $this -> belongsTo(M_Profile_Member::class, 'id_binaan', 'username');
+    }
 
 }

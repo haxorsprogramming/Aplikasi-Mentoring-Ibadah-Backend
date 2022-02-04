@@ -26,8 +26,30 @@
                 <div style="margin-bottom:20px;">
                     <a href="javascript:void(0)" @click="tambahBinaanAtc()" class="btn btn-primary">Tambah Binaan</a>
                 </div>
+                <hr/>
+                <table class="table table-hover" id="tblListBinaan">
+                    <thead>
+                        <tr>
+                            <td>No</td>
+                            <td>Nama Binaan</td>
+                            <td>Waktu Bergabung</td>
+                            <td>Aksi</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($dataAnggota as $anggota)
+                    <tr>
+                        <td>{{ $loop -> iteration }}</td>
+                        <td>{{ $anggota -> profileData -> nama_lengkap }}<br/><b>({{ $anggota -> id_binaan }})</b></td>
+                        <td>{{ $anggota -> created_at }}</td>
+                        <td>
+                            <a href="javascript:void(0)" class="btn btn-warning" @click="hapusAnggotaBinaanAtc('{{ $anggota -> token_anggota }}')">Hapus</a>
+                        </td>
+                    </tr>
+                    @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
-
     </div>
 </div>

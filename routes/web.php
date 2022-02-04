@@ -25,4 +25,6 @@ Route::post('/admin/main-app/binaan/hapus/proses', [App\Http\Controllers\Admin\C
 Route::get('/admin/main-app/kelompok-binaan/list', [App\Http\Controllers\Admin\C_Kelompok_Binaan::class, 'kelompokBinaanPage']);
 Route::post('/admin/main-app/kelompok-binaan/tambah/proses', [App\Http\Controllers\Admin\C_Kelompok_Binaan::class, 'prosesTambahKelompokBinaan']);
 Route::get('/admin/main-app/kelompok-binaan/{idKelompok}/detail', [App\Http\Controllers\Admin\C_Kelompok_Binaan::class, 'detailKelompokBinaan']);
-Route::post('/admin/main-app/kelompok-binaan/tambah-anggota/prosess', [App\Http\Controllers\Admin\C_Kelompok_Binaan::class, 'prosesTambahAnggota']);
+Route::post('/admin/main-app/kelompok-binaan/tambah-anggota/proses', [App\Http\Controllers\Admin\C_Kelompok_Binaan::class, 'prosesTambahAnggota']);
+Route::post('/admin/main-app/kelompok-binaan/hapus-anggota/proses', [App\Http\Controllers\Admin\C_Kelompok_Binaan::class, 'prosesHapusAnggota']);
+Route::post('/admin/main-app/kelompok-binaan/hapus/proses', [App\Http\Controllers\Admin\C_Kelompok_Binaan::class, 'prosesHapusKelompokBinaan']);

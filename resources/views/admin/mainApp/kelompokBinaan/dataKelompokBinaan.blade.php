@@ -24,9 +24,10 @@
                             <td>{{ substr($kb -> id_kelompok_binaan, 0, 6) }}</td>
                             <td><strong>{{ $kb -> nama_kelompok_binaan }}</strong></td>
                             <td>{{ $kb -> mentorData -> nama_lengkap}}</td>
-                            <td></td>
+                            <td>{{ $kb -> totalAnggota($kb -> id_kelompok_binaan) }}</td>
                             <td>
                                 <a href="javascript:void(0)" class="btn btn-primary" @click="detailAtc('{{ $kb -> id_kelompok_binaan }}')">Detail</a>&nbsp;&nbsp;
+                                <a href="javascript:void(0)" class="btn btn-warning" @click="hapusAtc('{{ $kb -> id_kelompok_binaan }}')">Hapus</a>
                             </td>
                         </tr>
                         @endforeach

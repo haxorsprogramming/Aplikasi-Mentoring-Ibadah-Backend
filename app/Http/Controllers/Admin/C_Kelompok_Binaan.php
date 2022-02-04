@@ -35,22 +35,32 @@ class C_Kelompok_Binaan extends Controller
     public function detailKelompokBinaan(Request $request, $idKelompokBinaan)
     {
         $dataBinaan = M_User::where('role', 'BINAAN') -> get();
+        $dataAnggota = M_Kelompok_Binaan_anggota::where('id_kelompok_binaan', $idKelompokBinaan) -> get();
         $detailKb = M_Kelompok_Binaan::where('id_kelompok_binaan', $idKelompokBinaan) -> first();
-        $dr = ['dataBinaan' => $dataBinaan, 'detailKb' => $detailKb];
+        $dr = ['dataBinaan' => $dataBinaan, 'detailKb' => $detailKb, 'dataAnggota' => $dataAnggota];
         return view('admin.mainApp.kelompokBinaan.detail.detailKelompokBinaan', $dr);
     }
     public function prosesTambahAnggota(Request $request)
     {
-        // // {'idKelompok':idKelompokBinaan, 'username':username}
-        // cek data 
-        // $cData = M_Kelompok_Binaan_anggota::where('id_kelompok_binaan', $request -> idKelompok) -> where('id_binaan', $request -> username) -> count();
-
-        // $kba = new M_Kelompok_Binaan_anggota();
-        // $kba -> token_anggota = Str::uuid();
-        // $kba -> id_kelompok_binaan = $request -> idKelompok;
-        // $kba -> id_binaan = $request -> username;
-        // $kba -> active = "1";
-        // $kba -> save();
+        $kba = new M_Kelompok_Binaan_anggota();
+        $kba -> token_anggota = Str::uuid();
+        $kba -> id_kelompok_binaan = $request -> idKelompok;
+        $kba -> id_binaan = $request -> username;
+        $kba -> active = "1";
+        $kba -> save();
+        $dr = ['status' => 'success'];
+        return \Response::json($dr);
+    }
+    public function prosesHapusAnggota(Request $request)
+    {
+        M_Kelompok_Binaan_anggota::where('token_anggota', $request -> token) -> delete();
+        $dr = ['status' => 'success'];
+        return \Response::json($dr);
+    }
+    public function prosesHapusKelompokBinaan(Request $request)
+    {
+        M_Kelompok_Binaan::where('id_kelompok_binaan', $request -> idKelompok) -> delete();
+        M_Kelompok_Binaan_anggota::where('id_kelompok_binaan', $request -> idKelompok) -> delete();
         $dr = ['status' => 'success'];
         return \Response::json($dr);
     }
