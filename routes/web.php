@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 // Administrator 
 Route::get('/', [App\Http\Controllers\Admin\C_Auth::class, 'loginPage']);
 Route::post('/admin/auth/login/process', [App\Http\Controllers\Admin\C_Auth::class, 'loginProcess']);
+Route::get('/admin/auth/logout', [App\Http\Controllers\Admin\C_Auth::class, 'logout']);
 
 Route::get('/admin/main-app/dashboard', [App\Http\Controllers\Admin\C_Main_App::class, 'index']);
 Route::get('/admin/main-app/beranda', [App\Http\Controllers\Admin\C_Main_App::class, 'beranda']);
@@ -34,3 +35,6 @@ Route::post('/admin/main-app/jenis-amalan/tambah/proses', [App\Http\Controllers\
 Route::post('/admin/main-app/jenis-amalan/data/get', [App\Http\Controllers\Admin\C_Jenis_Amalan::class, 'getDataAmalan']);
 Route::post('/admin/main-app/jenis-amalan/update/proses', [App\Http\Controllers\Admin\C_Jenis_Amalan::class, 'prosesUpdateAmalan']);
 Route::post('/admin/main-app/jenis-amalan/hapus/proses', [App\Http\Controllers\Admin\C_Jenis_Amalan::class, 'prosesHapusAmalan']);
+
+// Aplikasi 
+Route::get('/aplikasi-react/', [App\Http\Controllers\Aplikasi\C_Auth::class, 'loginPage']);

@@ -47,7 +47,7 @@
                     <div class="dropdown-header text-center">
                         <strong>Account</strong>
                     </div>
-                    <a class="dropdown-item" href="{{ url('/auth/logout') }}">
+                    <a class="dropdown-item" href="{{ url('/admin/auth/logout') }}">
                         <i class="fa fa-lock"></i> Logout</a>
                 </div>
             </li>
@@ -85,6 +85,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="javascript:void(0)">
                             <i class="nav-icon icon-list"></i> Analisa MLFQ
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/admin/auth/logout') }}">
+                            <i class="nav-icon icon-list"></i> Logout
                         </a>
                     </li>
                 </ul>
