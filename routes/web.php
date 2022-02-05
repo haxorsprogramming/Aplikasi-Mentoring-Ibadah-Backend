@@ -35,3 +35,8 @@ Route::post('/admin/main-app/jenis-amalan/tambah/proses', [App\Http\Controllers\
 Route::post('/admin/main-app/jenis-amalan/data/get', [App\Http\Controllers\Admin\C_Jenis_Amalan::class, 'getDataAmalan']);
 Route::post('/admin/main-app/jenis-amalan/update/proses', [App\Http\Controllers\Admin\C_Jenis_Amalan::class, 'prosesUpdateAmalan']);
 Route::post('/admin/main-app/jenis-amalan/hapus/proses', [App\Http\Controllers\Admin\C_Jenis_Amalan::class, 'prosesHapusAmalan']);
+
+
+// API 
+Route::post('/api/kegiatan/tambah/proses', [App\Http\Controllers\Api\C_Api::class, 'prosesTambahKegiatan']);
+Route::post('/api/kegiatan/pendaftaran/proses', [App\Http\Controllers\Api\C_Api::class, 'prosesPendaftaranKegiatan']);

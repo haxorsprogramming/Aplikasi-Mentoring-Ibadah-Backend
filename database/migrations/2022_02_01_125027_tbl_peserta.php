@@ -17,8 +17,11 @@ class TblPeserta extends Migration
             $table -> id();
             $table -> char('token_antrian', 50);
             $table -> char('ordinal', 5);
-            $table -> char('id_binaan', 200);
-            $table -> char('id_jenis_amalan', 50);
+            $table -> char('id_kegiatan', 200);
+            $table -> char('id_jenis_amalan', 60);
+            $table -> char('id_binaan', 200); 
+            $table -> dateTime('waktu_daftar') -> nullable();
+            $table -> dateTime('waktu_selesai') -> nullable();
             $table -> timestamps();
             $table -> char('active', 1);
         });

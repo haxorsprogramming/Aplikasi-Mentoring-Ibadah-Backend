@@ -15,11 +15,13 @@ class TblKegiatan extends Migration
     {
         Schema::create('tbl_kegiatan', function (Blueprint $table) {
             $table -> id();
-            $table -> char('token_kegiatan', 1);
+            $table -> char('token_kegiatan', 50);
+            $table -> char('nama_kegiatan', 150);
             $table -> date('tanggal_kegiatan');
             $table -> char('id_kelompok_binaan', 50);
-            $table -> dateTime('waktu_mulai');
-            $table -> dateTime('waktu_selesai');
+            $table -> char('id_mentor', 50);
+            $table -> char('waktu_mulai', 5);
+            $table -> char('waktu_selesai', 5);
             $table -> timestamps();
             $table -> char('active', 1);
         });
