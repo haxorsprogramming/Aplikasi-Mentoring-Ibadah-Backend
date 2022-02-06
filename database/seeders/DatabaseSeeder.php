@@ -27,14 +27,20 @@ class DatabaseSeeder extends Seeder
         $this -> createUserAndProfile('mentor1', 'MENTOR', 'mentor1', 'Aditia Darma', '082272177022', 'L');
         $this -> createUserAndProfile('mentor2', 'MENTOR', 'mentor2', 'Hanifah Mutiara', '081267228932', 'P');
         // create binaan 
-        $this -> createUserAndProfile('binaan1', 'BINAAN', 'binaan1', 'Umi Mardiah', '081278229022', 'P');
-        $this -> createUserAndProfile('binaan2', 'BINAAN', 'binaan2', 'Alfa Naninda', '08127823311', 'P');
+        $this -> createUserAndProfile('devi', 'BINAAN', 'devi', 'Devi Khairani', '081278229022', 'P');
+        $this -> createUserAndProfile('hilwa', 'BINAAN', 'devi', 'Hilwa Annisa Panjaitan', '081278229022', 'P');
+        $this -> createUserAndProfile('mulia', 'BINAAN', 'devi', 'Mulia Ningsih', '081278229022', 'P');
+        $this -> createUserAndProfile('nindya', 'BINAAN', 'devi', 'Nindya Mirandani Pratiwi', '081278229022', 'P');
+        $this -> createUserAndProfile('poppy', 'BINAAN', 'devi', 'Poppy Andriani', '081278229022', 'P');
+        $this -> createUserAndProfile('reni', 'BINAAN', 'devi', 'Reni Nurjanah', '081278229022', 'P');
+        $this -> createUserAndProfile('nuriah', 'BINAAN', 'devi', 'Nuriah Aini', '081278229022', 'P');
+        $this -> createUserAndProfile('nurul', 'BINAAN', 'devi', 'Nurul Safina', '081278229022', 'P');
         // create kader 
         $this -> createUserAndProfile('kader1', 'KADER', 'kader1', 'Fitri Ardianti', '083190741788', 'P');
         // create kelompok binaan 
-        $this -> createKelompokBinaan("AL Haziq", "mentor1");
-        $this -> createKelompokBinaan("AL Imran", "mentor2");
-        $this -> createKelompokBinaan("AR Rahman", "mentor1");
+        $this -> createKelompokBinaan("Aisyah", "mentor2");
+        $this -> createKelompokBinaan("Maimunah", "mentor2");
+        $this -> createKelompokBinaan("Khadijah", "mentor2");
         // create jenis amalan 
         $this -> createJenisAmalan("Sholat Subuh", "4");
         $this -> createJenisAmalan("Sholat Dzuhur", "5");

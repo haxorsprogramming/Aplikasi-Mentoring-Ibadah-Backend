@@ -36,7 +36,10 @@ Route::post('/admin/main-app/jenis-amalan/data/get', [App\Http\Controllers\Admin
 Route::post('/admin/main-app/jenis-amalan/update/proses', [App\Http\Controllers\Admin\C_Jenis_Amalan::class, 'prosesUpdateAmalan']);
 Route::post('/admin/main-app/jenis-amalan/hapus/proses', [App\Http\Controllers\Admin\C_Jenis_Amalan::class, 'prosesHapusAmalan']);
 
-
 // API 
 Route::post('/api/kegiatan/tambah/proses', [App\Http\Controllers\Api\C_Api::class, 'prosesTambahKegiatan']);
 Route::post('/api/kegiatan/pendaftaran/proses', [App\Http\Controllers\Api\C_Api::class, 'prosesPendaftaranKegiatan']);
+Route::post('/api/kegiatan/amalan/selesai/proses', [App\Http\Controllers\Api\C_Api::class, 'konfirmasiAmalanBinaanSelesai']);
+Route::post('/api/kegiatan/amalan/reject/proses', [App\Http\Controllers\Api\C_Api::class, 'konfirmasiReject']);
+
+Route::get('/api/pdf/export/{idKegiatan}', [App\Http\Controllers\Api\C_Api::class, 'exportPdf']);

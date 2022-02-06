@@ -16,6 +16,8 @@ class M_Peserta extends Model
         'id_binaan',
         'waktu_daftar',
         'waktu_selesai',
+        'status_approve',
+        'status_setoran',
         'active'
     ];
 }

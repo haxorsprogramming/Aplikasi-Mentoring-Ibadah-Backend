@@ -22,6 +22,8 @@ class TblPeserta extends Migration
             $table -> char('id_binaan', 200); 
             $table -> dateTime('waktu_daftar') -> nullable();
             $table -> dateTime('waktu_selesai') -> nullable();
+            $table -> char('status_approve', 30) -> nullable();
+            $table -> char('status_setoran', 40);
             $table -> timestamps();
             $table -> char('active', 1);
         });
