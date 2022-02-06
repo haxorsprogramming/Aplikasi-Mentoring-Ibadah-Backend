@@ -35,6 +35,9 @@ Route::post('/admin/main-app/jenis-amalan/tambah/proses', [App\Http\Controllers\
 Route::post('/admin/main-app/jenis-amalan/data/get', [App\Http\Controllers\Admin\C_Jenis_Amalan::class, 'getDataAmalan']);
 Route::post('/admin/main-app/jenis-amalan/update/proses', [App\Http\Controllers\Admin\C_Jenis_Amalan::class, 'prosesUpdateAmalan']);
 Route::post('/admin/main-app/jenis-amalan/hapus/proses', [App\Http\Controllers\Admin\C_Jenis_Amalan::class, 'prosesHapusAmalan']);
+// mlfq 
+Route::get('/admin/main-app/analisa-mlfq/list', [App\Http\Controllers\Admin\C_Mlfq::class, 'mlfqPage']);
+Route::get('/admin/main-app/analisa-mlfq/{token}/analisa', [App\Http\Controllers\Admin\C_Mlfq::class, 'analisaPage']);
 
 // API 
 Route::post('/api/kegiatan/tambah/proses', [App\Http\Controllers\Api\C_Api::class, 'prosesTambahKegiatan']);

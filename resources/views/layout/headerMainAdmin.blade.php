@@ -83,7 +83,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)">
+                        <a class="nav-link" href="javascript:void(0)" @click="menuAtc('admin/main-app/analisa-mlfq/list', 'Analisa MLFQ')">
                             <i class="nav-icon icon-list"></i> Analisa MLFQ
                         </a>
                     </li>

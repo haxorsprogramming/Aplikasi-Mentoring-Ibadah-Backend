@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\M_Profile_Member;
+use App\Models\M_Jenis_Amalan;
+
 class M_Peserta extends Model
 {
     protected $table = "tbl_peserta";
@@ -20,4 +23,14 @@ class M_Peserta extends Model
         'status_setoran',
         'active'
     ];
+
+    public function binaanData($idBinaan)
+    {
+        return M_Profile_Member::where('username', $idBinaan) -> first();
+    }
+    public function jenisAmalan($idAmalan)
+    {
+        return M_Jenis_Amalan::where('kd_amalan', $idAmalan) -> first();
+    }
+    
 }
