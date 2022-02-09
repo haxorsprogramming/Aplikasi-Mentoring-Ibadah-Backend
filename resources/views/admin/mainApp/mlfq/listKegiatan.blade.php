@@ -25,7 +25,7 @@
                         <td>{{ $kegiatan -> mentorData -> nama_lengkap }}</td>
                         <td>{{ $kegiatan -> totalBinaan($kegiatan -> token_kegiatan) }}</td>
                         <td>{{ $kegiatan -> tanggal_kegiatan }}</td>
-                        <td></td>
+                        <td>{{ $kegiatan -> statusSetoran($kegiatan -> token_kegiatan) }}</td>
                         <td>
                             <a href="javascript:void(0)" class="btn btn-primary" onclick='analisaMlfqAtc("{{ $kegiatan -> token_kegiatan }}")'>Analisa MLFQ</a>
                         </td>

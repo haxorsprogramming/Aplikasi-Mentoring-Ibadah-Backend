@@ -8,7 +8,7 @@
     <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
     <meta name="author" content="Jepnidah Hasibuan">
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
-    <title>SPK Pemilihan Kost berbasis Topsis</title>
+    <title>Aplikasi Monitoring Ibadah Harian - LDK AL-IZZAH UINSU</title>
     <!-- Icons-->
     <link href="{{ asset('ladun/admin/') }}/asset/vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
     <link href="{{ asset('ladun/admin/') }}/asset/vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">

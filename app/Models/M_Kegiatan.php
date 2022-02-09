@@ -31,4 +31,15 @@ class M_Kegiatan extends Model
         return M_Peserta::where('id_kegiatan', $idKegiatan) -> count();
     }
 
+    public function statusSetoran($idKegiatan)
+    {
+        $totalBinaan = M_Peserta::where('id_kegiatan', $idKegiatan) -> count();
+        $tSelesai = M_Peserta::where('id_kegiatan', $idKegiatan) -> where('status_setoran', 'SELESAI') -> count();
+        if($totalBinaan == $tSelesai){
+            return "SELESAI";
+        }else{
+            return "BERLANGSUNG";
+        }
+    }
+
 }

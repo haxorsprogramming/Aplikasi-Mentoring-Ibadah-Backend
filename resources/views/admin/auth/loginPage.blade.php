@@ -7,7 +7,7 @@
                     <div class="card p-4">
                         <div class="card-body">
                             <div style="text-align: center;">
-                                <img src="http://s3.jagoanstorage.com/aditia-storage/asset/logo/uinsu.png" style="width: 200px;" />
+                                <img src="http://s3.jagoanstorage.com/aditia-storage/asset/logo/LOGO_LDK.jpg" style="width: 200px;" />
                                 <p class="text-muted" style="margin-bottom: -1px;">Sistem Monitoring Ibadah Harian</p>
                                 <h3>LDK Al-Izzah Uinsu</h3>
                                 <hr/>
@@ -31,14 +31,15 @@
                                 <input class="form-control" type="password" placeholder="Password" id="txtPassword">
                             </div>
                             <div class="row">
-                                <div class="col-6">
+                                <div class="col-12" style="text-align: center;">
                                     <a href="javascript:void(0)" class="btn btn-primary px-4" id="btnLogin" onclick="prosesLogin()">Login</a>
                                 </div>
-
                             </div>
 
-                            <div style="margin-top:20px;">
-                            Sistem Monitoring Ibadah Harian by <strong>Fitria SBA</strong>
+                            <div style="margin-top:20px;text-align:center;">
+                            Sistem Monitoring Ibadah Harian by <strong>Fitria SBA</strong><br/>
+                            Program Studi Sistem Informasi, Fakultas Sains dan Teknologi<br/>
+                            Universitas Islam Negeri Sumatera Utara
                             </div>
                         </div>
                     </div>

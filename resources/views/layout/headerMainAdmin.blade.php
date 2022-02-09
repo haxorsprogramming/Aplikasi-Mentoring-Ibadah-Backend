@@ -8,7 +8,7 @@
     <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
     <meta name="author" content="Łukasz Holeczek">
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
-    <title>SPK Pemilihan Kost berbasis Topsis </title>
+    <title>Aplikasi Monitoring Ibadah Harian - LDK AL-IZZAH UINSU</title>
     <!-- Icons-->
     <link href="{{ asset('ladun/admin') }}/asset/vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
     <link href="{{ asset('ladun/admin') }}/asset/vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="#">
-            <img class="navbar-brand-full" src="{{ asset('ladun/admin') }}/asset/img/brand/logo.png" width="49" alt="Uinsu Logo">
+            <img class="navbar-brand-full" src="http://s3.jagoanstorage.com/aditia-storage/asset/logo/LOGO_LDK.jpg" width="39" alt="Uinsu Logo">
         </a>
         <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
             <span class="navbar-toggler-icon"></span>
